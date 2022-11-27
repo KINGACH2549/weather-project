@@ -6,7 +6,6 @@ const app=express()
 const forecast = require('./utils/forecast')
 const geocode=require('./utils/geocode')
 
-const c=21
 const publicDirectory=path.join(__dirname,'../public')
 const viewPath=path.join(__dirname,'../templates/views')  // Instead of views we can also use any other name of the folder
 const partialsPath=path.join(__dirname,'../templates/partials')
