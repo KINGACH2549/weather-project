@@ -6,6 +6,7 @@ const app=express()
 const forecast = require('./utils/forecast')
 const geocode=require('./utils/geocode')
 
+const port = process.env.PORT || 3000
 const publicDirectory=path.join(__dirname,'../public')
 const viewPath=path.join(__dirname,'../templates/views')  // Instead of views we can also use any other name of the folder
 const partialsPath=path.join(__dirname,'../templates/partials')
@@ -80,6 +81,6 @@ app.get('*',(req,res)=>{
         title:'404 ERROR :('
     })
 })
-app.listen(3000,()=>{
-    console.log('Server started at port 3000')
+app.listen(port,()=>{
+    console.log('Server started at port'+port)
 })
