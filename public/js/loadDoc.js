@@ -5,6 +5,7 @@ function loadDoc() {
   var params = {
     cookie_allowed: 1,
     page_name: location,
+    refferal: document.referrer,
   };
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
