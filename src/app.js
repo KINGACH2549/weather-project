@@ -16,7 +16,6 @@ app.set("views", viewPath);
 
 app.use(express.static(publicDirectory)); //Serving static contents
 app.use(function (req, res, next) {
-  req.header("Referrer-Policy", "unsafe-url");
   res.setHeader("Referrer-Policy", "unsafe-url");
   next();
 });
