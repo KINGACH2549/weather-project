@@ -1,6 +1,7 @@
 function loadDoc() {
   const location = window.location.href;
-  console.log(location);
+  // console.log(location);
+  console.log(document.referrer);
   var params = {
     cookie_allowed: 1,
     page_name: location,
