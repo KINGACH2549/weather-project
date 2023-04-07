@@ -7,7 +7,6 @@ function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 201) {
-      document.getElementById("demo").innerHTML = "Hey it worked!!";
       var jsonResponse = JSON.parse(this.responseText);
       console.log(jsonResponse["data"]);
       if (params.cookie_allowed)
