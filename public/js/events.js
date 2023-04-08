@@ -12,7 +12,7 @@ function storeData(eventData, eventName) {
     event_name: eventName,
     page_name: window.location.href,
     cookies: document.cookie.split("=")[1],
-    eventData: JSON.stringify(eventData),
+    eventData: eventData,
   };
   fetch(url, {
     method: "POST",
@@ -54,7 +54,7 @@ document.addEventListener(events.click, function (event) {
     target.tagName === "BUTTON" ||
     target.tagName === "A"
   ) {
-    storeData(eventData, event.click);
+    storeData(eventData, events.click);
   }
   //   trackEvent(EVENT_CLICK, eventData);
 });
