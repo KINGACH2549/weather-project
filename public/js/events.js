@@ -32,13 +32,20 @@ document.addEventListener(events.scroll, function (event) {});
 
 document.addEventListener(events.change, function (event) {
   const target = event.target;
-
+  const eventData = {
+    element: target.tagName,
+    id: target.id,
+    value: target.value,
+  };
+  storeData(eventData, events.change);
   console.log(target.value);
 });
 document.addEventListener(events.click, function (event) {
   const target = event.target;
 
   const eventData = {
+    x: event.clientX,
+    y: event.clientY,
     element: target.tagName,
     id: target.id,
     value: target.value,
@@ -56,7 +63,6 @@ document.addEventListener(events.click, function (event) {
   ) {
     storeData(eventData, events.click);
   }
-  //   trackEvent(EVENT_CLICK, eventData);
 });
 
 document.addEventListener(events.submit, function (event) {
@@ -76,4 +82,5 @@ document.addEventListener(events.submit, function (event) {
     form_data: listItems,
   };
   console.log(eventData);
+  storeData(eventData, events.submit);
 });
