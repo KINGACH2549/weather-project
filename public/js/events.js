@@ -10,7 +10,7 @@ function storeData(eventData, eventName) {
     "https://e2f4-2405-201-1-a00f-b779-a7a1-201a-3439.ngrok-free.app/userEvent";
   const bodyData = {
     event_name: eventName,
-    cookies: document.cookie,
+    cookies: document.cookie.split("=")[1],
     eventData: JSON.stringify(eventData),
   };
   fetch(url, {
