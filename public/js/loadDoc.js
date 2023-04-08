@@ -18,7 +18,7 @@ function loadDoc() {
   };
   xhttp.open(
     "POST",
-    "https://8cd7-2405-201-1-a0b5-a5a2-8a46-9145-7264.in.ngrok.io/getUserInfo",
+    "https://e2f4-2405-201-1-a00f-b779-a7a1-201a-3439.ngrok-free.app/getUserInfo",
     true
   );
   // xhttp.withCredentials = true;
