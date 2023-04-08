@@ -79,6 +79,8 @@ document.addEventListener(events.submit, function (event) {
   }
 
   const eventData = {
+    element: target.tagName,
+    id: target.id,
     form_data: listItems,
   };
   console.log(eventData);
