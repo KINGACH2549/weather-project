@@ -7,7 +7,7 @@ const events = {
 
 function storeData(eventData, eventName) {
   const url =
-    "https://e2f4-2405-201-1-a00f-b779-a7a1-201a-3439.ngrok-free.app/userEvent";
+    "https://7cf5-2405-201-1-a0b5-2d2f-282e-f261-87d.ngrok-free.app/userEvent";
   const bodyData = {
     event_name: eventName,
     page_name: window.location.href,
@@ -28,7 +28,25 @@ function storeData(eventData, eventName) {
       console.log(e);
     });
 }
-document.addEventListener(events.scroll, function (event) {});
+function handleScrollEvent() {
+  const scrollY = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const pageHeight = document.body.scrollHeight;
+  const eventData = {
+    element: "Window",
+    scrollY,
+    windowHeight,
+    pageHeight,
+  };
+  storeData(eventData, events.scroll);
+}
+setInterval(() => {
+  window.addEventListener(events.scroll, handleScrollEvent);
+  setTimeout(() => {
+    window.removeEventListener(events.scroll, handleScrollEvent);
+    console.log("Event listener removed");
+  }, 1000); // Remove the event listener after 1 seconds (5000 milliseconds)
+}, 15000);
 
 document.addEventListener(events.change, function (event) {
   const target = event.target;
